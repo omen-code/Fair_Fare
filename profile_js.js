@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const nameSpan = document.getElementById("name");
   const emailSpan = document.getElementById("email");
   const mobileSpan = document.getElementById("mobile");
+  const genderSpan = document.getElementById("gender");
+  const emergencySpan = document.getElementById("emergency");
   const profilePic = document.getElementById("profile-pic");
   const modal = document.getElementById("modal");
   const closeModal = document.getElementById("close");
@@ -18,18 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (editButton.textContent === "Edit") {
       nameSpan.outerHTML = `<input type="text" id="name" value="${nameSpan.textContent}">`;
       emailSpan.outerHTML = `<input type="email" id="email" value="${emailSpan.textContent}">`;
-      mobileSpan.outerHTML = `<input type="text" id="mobile" value="${mobileSpan.textContent}">`;
-      
+      mobileSpan.outerHTML = `<input type="tel" id="mobile" value="${mobileSpan.telContent}">`;
+      genderSpan.outerHTML = `<input type="text" id="gender" value="${genderSpan.textContent}">`;
+      emergencySpan.outerHTML = `<input type="tel" id="emergency" value="${emergencySpan.telContent}">`;
+
       editButton.textContent = "Save";
       editPicButton.style.display = "inline"; // Show the edit pic button
     } else {
       const newName = document.getElementById("name").value;
       const newEmail = document.getElementById("email").value;
       const newMobile = document.getElementById("mobile").value;
+      const newgender = document.getElementById("gender").value;
+      const newemergency = document.getElementById("emergency").value;
 
       nameSpan.textContent = newName;
       emailSpan.textContent = newEmail;
-      mobileSpan.textContent = newMobile;
+      mobileSpan.telContent = newMobile;
+      genderSpan.textContent = newgender;
+      emergencySpan.telContent = newemergency;
 
       editButton.textContent = "Edit";
       editPicButton.style.display = "none"; // Hide the edit pic button
@@ -69,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  changeButton.onclick = () => {
+  cancelButton.onclick = () => {
     modal.style.display = "none"; // Close the modal to select a new image
   };
 });
