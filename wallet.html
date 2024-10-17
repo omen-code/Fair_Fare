@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairFare Wallet</title>
+    <link rel="stylesheet" href="wallet.css">
+</head>
+<body>
+    <div class="wallet-container">
+        <h1>FairFare Wallet</h1>
+        <div class="wallet-balance">
+            <p>Current Balance: ₹<span id="balance">0.00</span></p>
+        </div>
+        
+        <div class="wallet-add-money">
+            <input type="number" id="amount" placeholder="Enter amount to add" />
+            <button onclick="openPaymentModal()">Add Money</button>
+        </div>
+        
+        <div class="wallet-transaction-history">
+            <h2>Transaction History</h2>
+            <ul id="transaction-history"></ul>
+        </div>
+    </div>
+
+    <!-- Modal for payment method selection -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Select Payment Method</h2>
+            <button class="payment-btn" onclick="selectPaymentMethod('Credit Card')">Credit Card</button>
+            <button class="payment-btn" onclick="selectPaymentMethod('Debit Card')">Debit Card</button>
+            <button class="payment-btn" onclick="selectPaymentMethod('UPI')">UPI</button>
+            <button class="payment-btn" onclick="selectPaymentMethod('Net Banking')">Net Banking</button>
+        </div>
+    </div>
+
+    <script src="wallet.js"></script>
+</body>
+</html>
