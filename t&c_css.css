@@ -1,0 +1,94 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: whitesmoke;
+  color: #000000;
+  margin: 0;
+
+  line-height: 1.7;
+}
+
+/* Container for the Content */
+.container {
+  background: #ffffff;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.8em;
+  letter-spacing: 1px;
+}
+
+h2 {
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+  margin-top: 30px;
+  font-size: 1.8em;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  height: 3px;
+  background: #000000;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+  text-align: center;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #2c3e50;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(44, 62, 80, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+}
