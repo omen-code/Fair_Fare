@@ -189,4 +189,9 @@ footer p {
 
 .slide-menu.open {
   left: 0;
+  z-index: 1000;
+}
+
+.ride_details {
+  opacity: 1;
 }
