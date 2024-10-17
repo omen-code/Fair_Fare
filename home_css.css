@@ -55,7 +55,6 @@ nav ul li a {
   width: 50px;
   padding-top: 30px;
   padding-left: 10px;
-  z-index: 1;
 }
 
 .bar {
@@ -190,9 +189,9 @@ footer p {
 
 .slide-menu.open {
   left: 0;
-  z-index:500 ;
+  z-index: 500;
 }
 
-.ride_details{
+.ride_details {
   opacity: 1;
 }
