@@ -189,7 +189,7 @@ footer p {
 
 .slide-menu.open {
   left: 0;
-  z-index: 500;
+  z-index: 100;
 }
 
 .ride_details {
