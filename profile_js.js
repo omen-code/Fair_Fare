@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nameSpan.outerHTML = `<input type="text" id="name" value="${nameSpan.textContent}">`;
       emailSpan.outerHTML = `<input type="email" id="email" value="${emailSpan.textContent}">`;
       mobileSpan.outerHTML = `<input type="text" id="mobile" value="${mobileSpan.textContent}">`;
-
+      
       editButton.textContent = "Save";
       editPicButton.style.display = "inline"; // Show the edit pic button
     } else {
