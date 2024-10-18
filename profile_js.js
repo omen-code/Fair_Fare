@@ -20,9 +20,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (editButton.textContent === "Edit") {
       nameSpan.outerHTML = `<input type="text" id="name" value="${nameSpan.textContent}">`;
       emailSpan.outerHTML = `<input type="email" id="email" value="${emailSpan.textContent}">`;
-      mobileSpan.outerHTML = `<input type="tel" id="mobile" value="${mobileSpan.telContent}">`;
-      genderSpan.outerHTML = `<input type="text" id="gender" value="${genderSpan.textContent}">`;
-      emergencySpan.outerHTML = `<input type="tel" id="emergency" value="${emergencySpan.telContent}">`;
+      mobileSpan.outerHTML = `<input type="tel" id="mobile" value="${mobileSpan.textContent}">`;
+      emergencySpan.outerHTML = `<input type="tel" id="emergency" value="${emergencySpan.textContent}">`;
+
+      const genderValue = genderSpan.textContent.trim();
+      genderSpan.outerHTML = `
+      <div id="gender">
+        <label><input type="radio" name="gender" value="Male" ${
+          genderValue === "Male" ? "checked" : ""
+        }> Male</label>
+        <label><input type="radio" name="gender" value="Female" ${
+          genderValue === "Female" ? "checked" : ""
+        }> Female</label>
+        <label><input type="radio" name="gender" value="Other" ${
+          genderValue === "Other" ? "checked" : ""
+        }> Other</label>
+      </div>
+    `;
 
       editButton.textContent = "Save";
       editPicButton.style.display = "inline"; // Show the edit pic button
@@ -30,14 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const newName = document.getElementById("name").value;
       const newEmail = document.getElementById("email").value;
       const newMobile = document.getElementById("mobile").value;
-      const newgender = document.getElementById("gender").value;
       const newemergency = document.getElementById("emergency").value;
+      const newGender = document.querySelector(
+        'input[name="gender"]:checked'
+      ).value;
 
       nameSpan.textContent = newName;
       emailSpan.textContent = newEmail;
-      mobileSpan.telContent = newMobile;
-      genderSpan.textContent = newgender;
-      emergencySpan.telContent = newemergency;
+      mobileSpan.textContent = newMobile;
+      emergencySpan.textContent = newemergency;
+      genderSpan.outerHTML = `<span id="gender">${newGender}</span>`; // Restore span with new value
 
       editButton.textContent = "Edit";
       editPicButton.style.display = "none"; // Hide the edit pic button

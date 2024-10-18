@@ -169,23 +169,41 @@ h2 {
   margin-top: 15px; /* Spacing between image and buttons */
 }
 
+.profile-item input,
+.profile-item div {
+  margin-top: 10px; /* Add space between input fields */
+  padding: 8px; /* Add padding inside the input fields */
+  width: 100%; /* Optional: Make inputs span the full width */
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+
+#gender label {
+  margin-right: 5px; /* Add space between radio options */
+  display: inline-block;
+  padding: 2px; /* Optional: Space around radio button text */
+}
+
 .foot {
   background-color: black;
   color: white;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 4px;
 }
 
 .foot img {
-  width: 70px;
-  height: 70px;
-  padding: 15px;
+  width: 65px;
+  height: 65px;
+  padding: 10px;
 }
 
 footer {
   background-color: black;
   color: white;
   text-align: center;
-  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+footer a {
+  background-color: black;
+  color: white;
+  text-align: center;
 }
