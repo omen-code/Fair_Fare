@@ -1,78 +1,118 @@
-/* Basic reset and styling */
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
   background-color: #333;
-  color: white;
-  padding-left: 15px;
-  padding-right: 15px;
+}
+
+.input-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  padding-top: 50px;
+  padding-left: 70px;
+  gap: 12px; /* Space between the label and input */
+  margin-bottom: 20px;
 }
 
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  padding-left: 320px;
-  padding-top: 11px;
+.input-container label {
+  font-size: 16px;
+  color: white;
+  padding-top: 10px;
 }
 
-.slogan {
-  padding-left: 635px;
+.input-container input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1; /* Makes the input box grow as needed */
+  max-width: 400px; /* Keeps the input box from getting too wide */
+  border-radius: 15px;
 }
 
-nav ul {
-  list-style: none;
+.half-ellipse-header {
+  background-color: black;
+  height: 80px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  width: 100%;
+  position: relative;
   display: flex;
-  padding-top: 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: white;
 }
 
-nav ul li {
-  margin-left: 20px;
+.menu-icon {
+  cursor: pointer;
+  font-size: 24px;
+  padding-bottom: 25px;
 }
 
-nav ul li a {
+.logo h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  padding-left: 235px;
+  padding-top: 40px;
+}
+
+.logo p {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  flex: 1;
+  padding-left: 235px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
+  font-size: 16px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  width: 50px;
-  padding-top: 30px;
-  padding-left: 10px;
+.side-menu {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #333;
+  transition: 0.3s;
+  padding-top: 60px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
-.bar {
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  margin: 3px 0;
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
-#booking {
-  flex: 1;
+.side-menu a:hover {
+  background-color: #575757;
+}
+
+.main-content {
   padding: 20px;
-  background-color: #f4f4f4;
   text-align: center;
+  margin-top: -30px; /* Adjusts content to align with the half ellipse */
 }
 
-#booking h2 {
-  margin-bottom: 20px;
+.map-placeholder {
+  height: 300px;
+  margin: 20px 0;
+  background-color: antiquewhite;
 }
 
 #map {
@@ -82,116 +122,42 @@ nav ul li a {
   background-color: #ddd;
 }
 
-form {
-  margin-bottom: 20px;
-}
-
-input[type="text"] {
-  width: 40%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-input[id="destination"] {
-  width: 40%;
-  padding: 10px;
-  margin: 10px 0;
-  margin-left: 34px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button.btn {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px 0;
-}
-
-button.btn:hover {
-  background-color: #218838;
-}
-
-#fare-estimate {
-  margin-top: 20px;
-}
-
-.foot {
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-
-img {
-  width: 90px;
-  height: 90px;
-  padding: 15px;
-}
-
 footer {
   background-color: black;
   color: white;
   text-align: center;
+  padding: 10px 20px;
+  position: flex;
+  bottom: 0;
 }
 
 footer a {
-  background-color: black;
   color: white;
-  text-align: center;
-}
-footer p {
-  padding: 10px;
 }
 
-.slide-menu {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  width: 300px;
-  height: 100%;
-  background-color: #333;
-  color: white;
-  transition: left 0.3s ease;
-  padding: 20px;
-  z-index: 100;
-}
-.slide-menu.open {
-  left: 0;
-}
-.slide-menu ul {
-  list-style: none;
-}
-
-.slide-menu ul li {
-  margin: 20px 0;
-}
-
-.slide-menu ul li a {
+.social-icons img {
+  width: 50px;
+  height: 50px;
+  padding-left: 5px;
+  padding-bottom: 5px;
   color: white;
   text-decoration: none;
 }
 
-.slide-menu-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
 }
 
-.close-icon {
-  font-size: 1.5em;
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-.slide-menu.open {
-  left: 0;
-  z-index: 1000;
-}
-
-.ride_details {
-  opacity: 1;
+button:hover {
+  background-color: #555;
 }

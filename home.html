@@ -3,141 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FairFare - Ride Booking App</title>
+    <title>FairFare</title>
     <link rel="stylesheet" href="home_css.css" />
-    <link rel="stylesheet" href="leaflet.css" />
-    <script src="home_script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/IvanSanchez/Leaflet.GoogleMutant/Leaflet.GoogleMutant.js"></script>
   </head>
-
   <body>
-    <!-- Header with navigation and logo -->
-    <header>
-      <div class="container" onclick="toggleMenu(this)">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
-      </div>
+    <div class="half-ellipse-header">
+      <div class="menu-icon" onclick="openMenu()">&#9776;</div>
       <div class="logo">
-        <h1>FairFare</h1>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="profile_html.html"
-              ><b><h3>Profile</h3></b></a
-            >
-          </li>
-          <li>
-            <a href="settings.html"><h3>Settings</h3></a>
-          </li>
-          <li>
-            <a href="fairfare_about.html"><h3>About Us</h3></a>
-          </li>
-          <li>
-            <a href="login_html.html"><h3>Logout</h3></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <header>
-      <div class="slogan">
-        <h4>Your Favourite Riding Partner</h4>
-        <br />
-      </div>
-    </header>
-    <section id="booking">
-      <div id="map"></div>
-
-      <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-      <script>
-        // Initialize the map
-        document.addEventListener("DOMContentLoaded", function () {
-          const map = L.map("map").setView([12.978, 77.59], 13);
-          // Center map on London
-
-          // Load and display OpenStreetMap tiles
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 19,
-            attribution:
-              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          }).addTo(map);
-
-          const customIcon = L.icon({
-            iconUrl: "map_icon.png", // Path to your custom icon image
-            iconSize: [40, 40], // Size of the icon [width, height]
-            iconAnchor: [12, 35], // Point of the icon which corresponds to marker's location [width/2, height]
-            popupAnchor: [0, -41], // Adjust where the popup would open relative to the icon anchor
-          });
-          // Add a marker (optional)
-          L.marker([12.978, 77.59], { icon: customIcon }).addTo(map);
-        });
-      </script>
-
-      <!-- Main section for ride booking -->
-
-      <!-- Placeholder for Google Maps integration -->
-
-      <!-- Ride booking form -->
-      <div class="ride_details">
-        <form id="ride-form">
-          <label for="pickup"><strong>Pickup Location :</strong></label>
-          <input
-            type="text"
-            id="pickup"
-            placeholder="Enter Pickup Location"
-            required
-          /><br />
-          <label for="destination"><b>Destination :</b></label>
-          <input
-            type="text"
-            id="destination"
-            placeholder="Enter Destination"
-            required
-          /><br />
-          <button type="submit" class="btn"><b>GET A RIDE</b></button>
-        </form>
-      </div>
-
-      <!-- Slide-Out Menu for additional options -->
-      <div class="slide-menu" id="slide-menu">
-        <div class="slide-menu-header">
-          <h2>Menu</h2>
-          <div class="close-icon" id="close-icon">
-            <a href="home.html">&times;</a>
-          </div>
-        </div>
-        <ul>
-          <li><a href="profile_html.html">My Profile</a></li>
-          <li><a href="#">Ride History</a></li>
-          <li><a href="#">Saved Places</a></li>
-          <li><a href="wallet.html">Wallet</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="login_html.html">Logout</a></li>
-        </ul>
-      </div>
-    </section>
-    <!-- Footer -->
-    <footer>
-      <div class="foot">
-        <br />
         <h2>FairFare</h2>
-        <br />
-        Contact Us Online:
-        <br />
-        <a href="https://www.instagram.com/fair_fare.official"
-          ><img src="insta_logo.jpg"
-        /></a>
-        <img src="facebook_logo.png" />
-        <img src="x_logo.png" />
+        <p>Your Favourite Riding Partner</p>
+      </div>
+
+      <div class="nav-links">
+        <a href="profile_html.html">Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="login_html.html">Logout</a>
+      </div>
+    </div>
+
+    <div class="side-menu" id="sideMenu">
+      <a href="#" onclick="closeMenu()">&#8592;Back</a>
+      <a href="profile_html.html">My Profile</a>
+      <a href="#">Saved Locations</a>
+      <a href="wallet.html">Wallet</a>
+      <a href="settings.html">Settings</a>
+      <a href="fairfare_about.html">About Us</a>
+      <a href="login_html.html">Logout</a>
+    </div>
+
+    <div class="main-content">
+      <div class="input-container">
+        <label for="destination">Enter destination:</label>
+        <input
+          type="text"
+          id="destination"
+          placeholder="Enter your destination"
+        />
+      </div>
+
+      <div class="map-placeholder">
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+        <script>
+          // Initialize the map
+          document.addEventListener("DOMContentLoaded", function () {
+            const map = L.map("map").setView([12.978, 77.59], 13);
+            // Center map on London
+
+            // Load and display OpenStreetMap tiles
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              maxZoom: 19,
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            const customIcon = L.icon({
+              iconUrl: "map_icon.png", // Path to your custom icon image
+              iconSize: [40, 40], // Size of the icon [width, height]
+              iconAnchor: [12, 35], // Point of the icon which corresponds to marker's location [width/2, height]
+              popupAnchor: [0, -41], // Adjust where the popup would open relative to the icon anchor
+            });
+            // Add a marker (optional)
+            L.marker([12.978, 77.59], { icon: customIcon }).addTo(map);
+          });
+        </script>
+      </div>
+
+      <button onclick="getRide()">Get Ride</button>
+    </div>
+    <footer>
+      <div class="footer">
+        <p>FairFare</p>
+        <p>Contact Us Online:</p>
+        <div class="social-icons">
+          <a href="#"><img src="insta_logo.jpg" /></a>
+          <a href="#"><img src="facebook_logo.png" /></a>
+          <a href="#"><img src="x_logo.png" /></a>
+        </div>
+        <a href="#">Terms & Conditions</a>
+        <p>&copy; 2024 FairFare. All Rights Reserved.</p>
       </div>
     </footer>
-    <footer>
-      <a href="t&c.html" alt="t&c">Terms & Conditions</a>
-
-      <p>&copy; 2024 FairFare. All Rights Reserved.</p>
-      <br />
-    </footer>
-
-    <!-- JavaScript -->
+    <script src="home_script.js"></script>
   </body>
 </html>

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("modal");
   const closeModal = document.getElementById("close");
   const confirmButton = document.getElementById("confirm-btn");
-  const changeButton = document.getElementById("change-btn");
+  const cancelButton = document.getElementById("cancel-btn");
   const preview = document.getElementById("preview");
   const messageDiv = document.getElementById("message");
 
