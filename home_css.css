@@ -70,6 +70,7 @@ body {
   display: flex;
   gap: 10px;
   padding-bottom: 20px;
+  padding-right: 15px;
 }
 
 .nav-links a {

@@ -1,3 +1,4 @@
+// Sidebar menu functions
 function openMenu() {
   document.getElementById("sideMenu").style.left = "0";
 }
@@ -6,6 +7,7 @@ function closeMenu() {
   document.getElementById("sideMenu").style.left = "-100%";
 }
 
+// Get Ride function
 function getRide() {
   const pickup = document.getElementById("pickup").value;
   const destination = document.getElementById("destination").value;
@@ -16,57 +18,53 @@ function getRide() {
   }
 }
 
-// Initialize the map
-var map = L.map("map").setView([12.9716, 77.5946], 13); // Example coordinates (Bangalore)
-
-// Add Google Maps tiles using the GoogleMutant plugin
-var googleLayer = L.gridLayer.googleMutant({
-  maxZoom: 20,
-  type: "roadmap", // Use 'satellite', 'terrain', or 'hybrid' for other map types
-});
-
-// Add the Google layer to the map
-googleLayer.addTo(map);
-
-// Google Maps API integration for autocomplete
-let pickupAutocomplete, destinationAutocomplete;
-
-function initAutocomplete() {
-  const pickupInput = document.getElementById("pickup");
-  const destinationInput = document.getElementById("destination");
-
-  // Initialize autocomplete for both pickup and destination fields
-  pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput);
-  destinationAutocomplete = new google.maps.places.Autocomplete(
-    destinationInput
-  );
-
-  // Bias the autocomplete results to the map's viewport
-  pickupAutocomplete.bindTo("bounds", map);
-  destinationAutocomplete.bindTo("bounds", map);
-}
-
+// Initialize the map on page load
 document.addEventListener("DOMContentLoaded", function () {
-  var map = L.map("map").setView([12.9716, 77.5946], 13);
+  // Create the map and center it on specific coordinates
+  const map = L.map("map").setView([12.9716, 77.5946], 13); // Example coordinates for Bangalore
 
-  // Load and display OpenStreetMap tiles as a backup if GoogleMutant fails
+  // Add OpenStreetMap tiles as the base layer
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
+  // Check if GoogleMutant should be added, but skip for now
+  // Uncomment below if you wish to re-enable GoogleMutant after verifying basic map display
+  /*
   try {
-    // Google Maps tiles using GoogleMutant plugin
-    var googleLayer = L.gridLayer.googleMutant({
+    const googleLayer = L.gridLayer.googleMutant({
       maxZoom: 20,
       type: "roadmap",
     });
-    googleLayer.addTo(map); // Add the Google layer to the map
+    googleLayer.addTo(map);
   } catch (error) {
     console.error("Google Maps layer failed to load:", error);
   }
+  */
 
-  // Adjust map display when page layout changes
-  map.invalidateSize();
+  // Add a custom marker
+  const customIcon = L.icon({
+    iconUrl: "map_icon.png", // Make sure this icon path is correct
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40],
+  });
+
+  // Example marker at the map center
+  L.marker([12.9716, 77.5946], { icon: customIcon })
+    .addTo(map)
+    .bindPopup("Your Location")
+    .openPopup();
+
+  // Refresh the map size to handle any layout shifts
+  map.whenReady(function () {
+    map.invalidateSize();
+  });
+
+  // Event listener to resize the map if the window size changes
+  window.addEventListener("resize", () => {
+    map.invalidateSize();
+  });
 });
