@@ -7,11 +7,12 @@ function closeMenu() {
 }
 
 function getRide() {
+  const pickup = document.getElementById("pickup").value;
   const destination = document.getElementById("destination").value;
-  if (destination) {
-    alert(`Ride to ${destination} is being processed.`);
+  if (pickup && destination) {
+    alert(`Ride from ${pickup} to ${destination} is being processed.`);
   } else {
-    alert("Please enter a destination.");
+    alert("Please enter both pickup and destination locations.");
   }
 }
 
@@ -27,23 +28,50 @@ var googleLayer = L.gridLayer.googleMutant({
 // Add the Google layer to the map
 googleLayer.addTo(map);
 
-// Ensure the map resizes properly if the page layout changes
-map.invalidateSize();
-
-// Google Maps API integration
-let map;
+// Google Maps API integration for autocomplete
 let pickupAutocomplete, destinationAutocomplete;
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-
-  // Autocomplete fields for Pickup and Destination
+function initAutocomplete() {
   const pickupInput = document.getElementById("pickup");
   const destinationInput = document.getElementById("destination");
-      h 
+
+  // Initialize autocomplete for both pickup and destination fields
   pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput);
-  destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
+  destinationAutocomplete = new google.maps.places.Autocomplete(
+    destinationInput
+  );
+
+  // Bias the autocomplete results to the map's viewport
+  pickupAutocomplete.bindTo("bounds", map);
+  destinationAutocomplete.bindTo("bounds", map);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var map = L.map("map", {
+    center: [12.9716, 77.5946],
+    zoom: 13,
+    zoomControl: false,
+  }); // Centered on Bangalore
+
+  // Load and display OpenStreetMap tiles as a backup if GoogleMutant fails
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Google Maps tiles using GoogleMutant plugin
+  var googleLayer = L.gridLayer.googleMutant({
+    maxZoom: 20,
+    type: "roadmap",
+  });
+  googleLayer.addTo(map); // Add the Google layer to the map
+
+  // Forcefully remove any remaining zoom controls
+  if (map.zoomControl) {
+    map.removeControl(map.zoomControl);
+  }
+
+  // Adjust map display when page layout changes
+  map.invalidateSize();
+});

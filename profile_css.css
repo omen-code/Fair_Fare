@@ -3,7 +3,7 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  background-color: #333;
+  background-color: #272424;
 }
 
 .half-ellipse-header {
@@ -38,7 +38,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #232121;
 }
 
 .logo {
@@ -68,7 +67,7 @@ main {
   max-width: 550px;
   margin: 20px auto;
   padding: 20px;
-  background: white;
+  background: #494949;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
