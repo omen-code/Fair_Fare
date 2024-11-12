@@ -47,11 +47,7 @@ function initAutocomplete() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var map = L.map("map", {
-    center: [12.9716, 77.5946],
-    zoom: 13,
-    zoomControl: false,
-  }); // Centered on Bangalore
+  var map = L.map("map").setView([12.9716, 77.5946], 13);
 
   // Load and display OpenStreetMap tiles as a backup if GoogleMutant fails
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -60,16 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  // Google Maps tiles using GoogleMutant plugin
-  var googleLayer = L.gridLayer.googleMutant({
-    maxZoom: 20,
-    type: "roadmap",
-  });
-  googleLayer.addTo(map); // Add the Google layer to the map
-
-  // Forcefully remove any remaining zoom controls
-  if (map.zoomControl) {
-    map.removeControl(map.zoomControl);
+  try {
+    // Google Maps tiles using GoogleMutant plugin
+    var googleLayer = L.gridLayer.googleMutant({
+      maxZoom: 20,
+      type: "roadmap",
+    });
+    googleLayer.addTo(map); // Add the Google layer to the map
+  } catch (error) {
+    console.error("Google Maps layer failed to load:", error);
   }
 
   // Adjust map display when page layout changes
