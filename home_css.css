@@ -29,7 +29,7 @@ body {
 }
 
 .half-ellipse-header {
-  background-color: rgb(219, 219, 31);
+  background-color: rgb(235, 235, 8);
 
   height: 60px;
   border-bottom-left-radius: 50px;
@@ -158,7 +158,7 @@ input[type="text"] {
 }
 
 button {
-  background-color: rgb(219, 219, 31);
+  background-color: rgb(235, 235, 8);
   border-color: black;
   color: black;
   border-top-left-radius: 15px;
