@@ -1,8 +1,8 @@
 /* General Styles */
 body {
   font-family: "Poppins", sans-serif;
-  background: whitesmoke;
-  color: #000000;
+  background: black;
+  color: whitesmoke;
   margin: 0;
 
   line-height: 1.7;
@@ -10,7 +10,7 @@ body {
 
 /* Container for the Content */
 .container {
-  background: #ffffff;
+  background: black;
 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -26,7 +26,7 @@ h1 {
 }
 
 h2 {
-  border-left: 4px solid #3498db;
+  border-left: 4px solid rgb(235, 235, 8);
   padding-left: 10px;
   margin-top: 30px;
   font-size: 1.8em;
@@ -73,7 +73,20 @@ hr {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(44, 62, 80, 0.5);
 }
+footer {
+  background-color: black;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  color: white;
+  text-align: center;
 
+  position: flex;
+  bottom: 0;
+}
+
+footer a {
+  color: white;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
