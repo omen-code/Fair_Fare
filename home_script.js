@@ -1,5 +1,5 @@
 // Replace 'YOUR_API_KEY' with your actual OpenCage API key
-const apiKey = 'e2166e5815c945c4a8d964b3e4d0c1b0';
+const apiKey = 'YOUR_API_KEY';
 
 // Sidebar menu functions
 function openMenu() {
@@ -93,4 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", () => {
         map.invalidateSize();
     });
+
+    // Add geosearch options
+    var options = {
+        key: apiKey,
+        position: 'topright',
+    };
+
+    // Add geosearch to the map
+    var geosearchControl = L.Control.openCageGeosearch(options).addTo(map);
 });
