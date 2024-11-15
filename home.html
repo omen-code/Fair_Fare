@@ -1,86 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FairFare</title>
     <link rel="stylesheet" href="home_css.css" />
     <link rel="stylesheet" href="leaflet.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@opencage/leaflet-opencage-geosearch/leaflet-opencage-geosearch.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/IvanSanchez/Leaflet.GoogleMutant/Leaflet.GoogleMutant.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@opencage/geosearch-bundle"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@opencage/leaflet-opencage-geosearch"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div class="half-ellipse-header">
-      <div class="menu-icon" onclick="openMenu()">&#9776;</div>
-      <div class="logo">
-        <h2>FairFare</h2>
-        <p>Your Favourite Riding Partner</p>
-      </div>
-      <div class="nav-links">
-        <a href="profile_html.html">Profile</a>
-        <a href="wallet.html">Wallet</a>
-        <a href="login_html.html">Logout</a>
-      </div>
+        <div class="menu-icon" onclick="openMenu()">&#9776;</div>
+        <div class="logo">
+            <h2>FairFare</h2>
+            <p>Your Favourite Riding Partner</p>
+        </div>
+        <div class="nav-links">
+            <a href="profile_html.html">Profile</a>
+            <a href="settings.html">Settings</a>
+            <a href="login_html.html">Logout</a>
+        </div>
     </div>
 
     <div class="side-menu" id="sideMenu">
-      <a href="#" onclick="closeMenu()">&#8592;Back</a>
-      <a href="profile_html.html">My Profile</a>
-      <a href="#">Saved Locations</a>
-      <a href="wallet.html">Wallet</a>
-      <a href="settings.html">Settings</a>
-      <a href="fairfare_about.html">About Us</a>
-      <a href="login_html.html">Logout</a>
+        <a href="#" onclick="closeMenu()">&#8592;Back</a>
+        <a href="profile_html.html">My Profile</a>
+        <a href="#">Saved Locations</a>
+        <a href="wallet.html">Wallet</a>
+        <a href="settings.html">Settings</a>
+        <a href="fairfare_about.html">About Us</a>
+        <a href="login_html.html">Logout</a>
     </div>
 
     <div class="main-content">
-      <div class="input-container">
-        <label for="pickup">Enter Pickup Location:</label>
-        <input
-          type="text"
-          id="pickup"
-          placeholder="Enter your pickup location"
-        />
-        <br /><br />
-        <label for="destination">Enter Destination:</label>
-        <input
-          type="text"
-          id="destination"
-          placeholder="Enter your destination"
-        />
-      </div>
+        <div class="input-container">
+            <label for="pickup">Enter Pickup Location:</label>
+            <input type="text" id="pickup" placeholder="Enter your pickup location" />
+            <br /><br />
+            <label for="destination">Enter Destination:</label>
+            <input type="text" id="destination" placeholder="Enter your destination" />
+        </div>
 
-      <div class="map-placeholder">
-        <div id="map" style="width: 100%; height: 400px"></div>
-      </div>
+        <div class="map-placeholder">
+            <div id="map"></div>
+            <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+        </div>
 
-      <button onclick="getRide()">Get Ride</button>
+        <button onclick="getRide()">Get Ride</button>
     </div>
 
     <footer>
-      <div class="footer">
-        <hr color="yellow" />
-        <h2>FairFare</h2>
-        <p>Contact Us Online:</p>
-        <div class="social-icons">
-          <a href="#"><img src="insta_logo.jpg" /></a>
-          <a href="#"><img src="facebook_logo.png" /></a>
-          <a href="#"><img src="x_logo.png" /></a>
+        <div class="footer">
+            <h2>FairFare</h2>
+            <p><u>Contact Us Online:</u></p>
+            <div class="social-icons">
+                <a href="#"><img src="insta_logo.jpg" /></a>
+                <a href="#"><img src="facebook_logo.png" /></a>
+                <a href="#"><img src="x_logo.png" /></a>
+            </div>
+            <a href="t&c.html">Terms & Conditions</a>
+            <p>&copy; 2024 FairFare. All Rights Reserved.</p>
         </div>
-        <a href="t&c.html">Terms & Conditions</a>
-        <p>&copy; 2024 FairFare. All Rights Reserved.</p>
-      </div>
     </footer>
     <script src="home_script.js"></script>
-  </body>
+</body>
 </html>
