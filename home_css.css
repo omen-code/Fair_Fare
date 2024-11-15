@@ -90,7 +90,7 @@ body {
   top: 0;
   width: 20%;
   height: 100%;
-  background-color: rgb(219, 219, 31);
+  background-color: black;
   transition: 0.3s;
   padding-top: 60px;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
@@ -99,7 +99,7 @@ body {
 
 .side-menu a {
   display: block;
-  color: black;
+  color: rgb(219, 219, 31);
   padding: 15px 20px;
   text-decoration: none;
   transition: 0.2s;
