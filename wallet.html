@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h2>FairFare</h2>
+      <a href="home.html"><h2>FairFare</h2></a>
     </header>
     <main>
       <div class="wallet-container">
@@ -34,29 +34,9 @@
       <!-- Modal for payment method selection -->
       <div id="paymentModal" class="modal">
         <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <h2>Select Payment Method</h2>
-          <button
-            class="payment-btn"
-            onclick="selectPaymentMethod('Credit Card')"
-          >
-            Credit Card
-          </button>
-          <button
-            class="payment-btn"
-            onclick="selectPaymentMethod('Debit Card')"
-          >
-            Debit Card
-          </button>
-          <button class="payment-btn" onclick="selectPaymentMethod('UPI')">
-            UPI
-          </button>
-          <button
-            class="payment-btn"
-            onclick="selectPaymentMethod('Net Banking')"
-          >
-            Net Banking
-          </button>
+          <span class="close" onclick="closeModal()">&#8592;</span>
+          <h2>Scan QR</h2>
+          <img width="300" height="300" src="QR.jpg">
         </div>
       </div>
     </main>
@@ -64,8 +44,8 @@
         <div class="foot">
           <hr color="yellow" />
           <h2>FairFare</h2>
-  
-          Contact Us Online:
+          <br>
+          <p>Contact Us Online:</p>
           <br />
           <a href="https://www.instagram.com/fair_fare.official"
             ><img src="insta_logo.jpg"
