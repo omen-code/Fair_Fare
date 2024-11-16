@@ -28,6 +28,11 @@ header {
   color: black;
 }
 
+.head a {
+  text-decoration: none;
+  color: black;
+}
+
 .content {
   padding: 30px;
 }

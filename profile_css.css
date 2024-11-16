@@ -21,6 +21,11 @@ body {
   color: black;
 }
 
+.logo a {
+  color: black;
+  text-decoration: none;
+}
+
 .nav-links {
   display: flex;
   gap: 15px;

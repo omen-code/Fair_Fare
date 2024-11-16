@@ -28,6 +28,12 @@ header {
   border-bottom-right-radius: 50px;
   height: 60px;
 }
+
+header a {
+  color: black;
+  text-decoration: none;
+}
+
 /* Container for the Content */
 .container {
   max-width: 800px;
@@ -48,9 +54,13 @@ h1 {
   letter-spacing: 1px;
 }
 
-h2 {
+main h1 {
+  padding-top: 10px;
   color: white;
-  border-left: 4px solid #3498db;
+}
+main h2 {
+  color: white;
+  border-left: 4px solid rgb(235, 235, 8);
   padding-left: 10px;
   margin-top: 30px;
   font-size: 1.8em;
@@ -69,15 +79,6 @@ p {
   font-size: 1.1em;
   margin-bottom: 20px;
   text-align: justify;
-}
-
-/* Horizontal Rule */
-hr {
-  border: none;
-  height: 3px;
-  background: #000000;
-  border-radius: 5px;
-  margin: 20px 0;
 }
 
 /* Button Style */

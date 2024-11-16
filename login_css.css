@@ -12,11 +12,17 @@ header {
 .head {
   font-size: 24px;
   font-weight: bold;
-  padding-left: 32px;
+  padding-left: 30px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   color: black;
 }
+
+.head a {
+  color: black;
+  text-decoration: none;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: black;
