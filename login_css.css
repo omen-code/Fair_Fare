@@ -1,5 +1,5 @@
 header {
-  background-color:rgb(235, 235, 8);
+  background-color: rgb(235, 235, 8);
   color: #fff;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -28,12 +28,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 40px;
   padding-bottom: 30px;
 }
 
 .login-box {
-  background: rgb(183, 182, 182);
+  background: rgb(241, 235, 235);
   padding: 2rem;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -122,4 +122,8 @@ footer {
   padding-bottom: 5px;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
+}
+
+footer a {
+  color: white;
 }

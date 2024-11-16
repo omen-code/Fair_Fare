@@ -7,7 +7,7 @@ body {
 }
 
 .half-ellipse-header {
-  background-color:rgb(235, 235, 8);
+  background-color: rgb(235, 235, 8);
   height: 60px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -67,7 +67,7 @@ nav ul li a {
 
 main {
   max-width: 550px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
   background: rgb(241, 235, 235);
   border-radius: 8px;
