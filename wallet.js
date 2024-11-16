@@ -44,3 +44,26 @@ function selectPaymentMethod(method) {
 
 // Initialize balance on page load
 updateBalance();
+
+function completePayment() {
+  const amount = parseFloat(document.getElementById("amount").value);
+
+  if (isNaN(amount) || amount <= 0) {
+    alert("Invalid payment amount!");
+    return;
+  }
+
+  // Simulate payment completion
+  balance += amount;
+  updateBalance();
+
+  // Add the transaction to the history
+  const transactionHistory = document.getElementById("transaction-history");
+  const newTransaction = document.createElement("li");
+  newTransaction.textContent = `Added ₹${amount.toFixed(2)} via QR Payment`;
+  transactionHistory.appendChild(newTransaction);
+
+  // Reset input and close modal
+  document.getElementById("amount").value = "";
+  closeModal();
+}
