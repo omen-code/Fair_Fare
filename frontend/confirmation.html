@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose Your Ride</title>
+    <link rel="stylesheet" href="confirmation.css" />
+    <style>
+        .ride-image {
+          width: 100px; /* Set the desired width */
+          height: 100px; /* Set the desired height */
+          object-fit: cover; /* Ensures the image fits without distortion */
+        }
+        .service-logo {
+          width: 50px;
+          height: 50px;
+          object-fit: contain; /* Maintains aspect ratio while fitting within the box */
+        }
+      </style>
+      
+  </head>
+  <body onload="generateDetails()">
+    <header>
+      <a href="home.html"><h2>FairFare</h2></a>
+    </header>
+
+    <h3>Choose Your Preferred Ride</h3>
+    <div class="container">
+      <!-- Transport Options Section -->
+      <div class="transport-options">
+        <div id="mode0" class="ride-option"></div>
+        <div id="mode1" class="ride-option"></div>
+        <div id="mode2" class="ride-option"></div>
+        <div id="mode3" class="ride-option"></div>
+      </div>
+
+      <!-- Comparison Section -->
+      <div class="comparison-section"></div>
+    </div>
+    
+    <footer>
+        <div class="foot">
+          <hr color="yellow" />
+          <h2>FairFare</h2>
+  
+          Contact Us Online:
+          <br />
+          <a href="https://www.instagram.com/fair_fare.official"
+            ><img src="insta_logo.jpg"
+          /></a>
+          <img src="facebook_logo.png" />
+          <img src="x_logo.png" />
+        </div>
+        <a href="t&c.html" alt="t&c">Terms & Conditions</a>
+        <p>&copy; 2024 FairFare. All Rights Reserved.</p>
+        <br />
+    <script src="confirmation.js"></script>
+  </body>
+</html>
