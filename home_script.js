@@ -45,6 +45,10 @@ async function getRide() {
                 const dst_lat = destinationCoordinates.latitude;
                 const dst_long = destinationCoordinates.longitude;
 
+                // Show alert and redirect upon confirmation
+                const message = `Ride from ${pickup} to ${destination} is being processed.\nPickup Coordinates: ${pick_lat}, ${pick_long}\nDestination Coordinates: ${dst_lat}, ${dst_long}`;
+                alert(message);
+
                 // Redirect to confirmation.html with parameters
                 const url = `confirmation.html?pickup=${encodeURIComponent(pickup)}&pick_lat=${pick_lat}&pick_long=${pick_long}&destination=${encodeURIComponent(destination)}&dst_lat=${dst_lat}&dst_long=${dst_long}`;
                 window.location.href = url;
