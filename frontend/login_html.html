@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FairFare - Login</title>
+    <link rel="stylesheet" href="login_css.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="head"><a href="home.html">FairFare</a></div>
+    </header>
+    <div class="login-container">
+      <div class="login-box">
+        <!-- Login Form -->
+        <div id="login-section">
+          <h2>Login to FairFare</h2>
+
+          <form id="login-form">
+            <div class="input-group">
+              <label for="login-input">Email / Mobile Number:</label>
+              <input
+                type="text"
+                id="login-input"
+                name="login-input"
+                placeholder="Enter your email or mobile number"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="login-password">Password:</label>
+              <input
+                type="password"
+                id="login-password"
+                name="login-password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <p id="login-error-message" class="error-message"></p>
+          </form>
+
+          <div class="links">
+            <a href="#" id="forgot-password-link">Forgot Password?</a>
+            <a href="#" id="sign-up-link">Sign Up</a>
+          </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div id="signup-section" style="display: none">
+          <h2>Create an Account</h2>
+
+          <form id="signup-form">
+            <div class="input-group">
+              <label for="signup-name">Name:</label>
+              <input
+                type="text"
+                id="signup-name"
+                name="signup-name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="signup-email">Email:</label>
+              <input
+                type="email"
+                id="signup-email"
+                name="signup-email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="signup-mobile">Mobile Number:</label>
+              <input
+                type="tel"
+                id="signup-mobile"
+                name="signup-mobile"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="signup-password">Password:</label>
+              <input
+                type="password"
+                id="signup-password"
+                name="signup-password"
+                placeholder="Create a password"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+
+            <p id="signup-error-message" class="error-message"></p>
+          </form>
+
+          <div class="links">
+            <a href="#" id="back-to-login">Login</a>
+          </div>
+        </div>
+
+        <!-- Forgot Password Form -->
+        <div id="forgot-password-section" style="display: none">
+          <h2>Forgot Password</h2>
+
+          <form id="forgot-password-form">
+            <div class="input-group">
+              <label for="forgot-email">Email:</label>
+              <input
+                type="email"
+                id="forgot-email"
+                name="forgot-email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="forgot-mobile">Mobile Number:</label>
+              <input
+                type="tel"
+                id="forgot-mobile"
+                name="forgot-mobile"
+                placeholder="Enter your mobile number"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn">Send OTP</button>
+
+            <p id="forgot-error-message" class="error-message"></p>
+          </form>
+
+          <!-- OTP Input -->
+          <div id="otp-section" style="display: none">
+            <h2>Enter OTP</h2>
+            <div class="input-group">
+              <label for="otp-input">OTP:</label>
+              <input
+                type="text"
+                id="otp-input"
+                name="otp-input"
+                placeholder="Enter the OTP"
+                required
+              />
+            </div>
+            <button id="verify-otp-btn" class="btn">Verify OTP</button>
+            <p id="otp-error-message" class="error-message"></p>
+          </div>
+
+          <div class="links">
+            <a href="login_html.html" id="back-to-login-from-forgot">Back to Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="foot">
+        <hr color="yellow" />
+        <h2>FairFare</h2>
+
+        Contact Us Online:
+        <br />
+        <a href="https://www.instagram.com/fair_fare.official"
+          ><img src="insta_logo.jpg"
+        /></a>
+        <img src="facebook_logo.png" />
+        <img src="x_logo.png" />
+      </div>
+      <a href="t&c.html" alt="t&c">Terms & Conditions</a>
+      <p>&copy; 2024 FairFare. All Rights Reserved.</p>
+      <br />
+    <!-- JavaScript -->
+    <script src="login_js.js"></script>
+  </body>
+</html>

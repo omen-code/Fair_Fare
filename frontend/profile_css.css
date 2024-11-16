@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.half-ellipse-header {
+  background-color: rgb(235, 235, 8);
+  height: 60px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  color: black;
+}
+
+.logo a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+  padding-bottom: 4px;
+  padding-right: 30px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  padding-left: 030px;
+  padding-bottom: 4px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgb(241, 235, 235);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+#profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+
+  border: 2px solid #333;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Spacing between items */
+}
+
+.profile-item label {
+  width: 100px; /* Fixed width for labels */
+  font-weight: bold; /* Make labels bold */
+}
+
+.profile-item span {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1; /* Allow span to take up remaining space */
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Spacing between buttons */
+  margin-top: 20px; /* Space above the buttons */
+  padding-left: 170px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: black;
+  color: rgb(241, 235, 235);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(32, 31, 31, 0.977);
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 100px; /* Adjusted for better positioning */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* Centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px; /* Reduced width for smaller modal */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.modal-content img {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular shape */
+  max-width: 150px; /* Max width to fit in modal */
+  margin: 0 auto; /* Center the image */
+  display: block; /* Block element to center */
+}
+
+.close {
+  color: black;
+  float: right;
+  font-size: 20px; /* Slightly smaller font size */
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-buttons {
+  text-align: center;
+  margin-top: 15px; /* Spacing between image and buttons */
+}
+
+.profile-item input,
+.profile-item div {
+  margin-top: 10px; /* Add space between input fields */
+  padding: 8px; /* Add padding inside the input fields */
+  width: 100%; /* Optional: Make inputs span the full width */
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+
+#gender label {
+  margin-right: 5px; /* Add space between radio options */
+  display: inline-block;
+  padding: 2px; /* Optional: Space around radio button text */
+}
+
+.foot {
+  background-color: black;
+  color: white;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  text-align: center;
+}
+
+.foot img {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+footer a {
+  background-color: black;
+  color: white;
+  text-align: center;
+}

@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+
+  background: black;
+  color: white;
+  margin: 0;
+
+  line-height: 1.7;
+}
+
+main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 32px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+
+  background-color: rgb(235, 235, 8);
+  color: black;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 60px;
+}
+
+header a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Container for the Content */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Headings */
+h1 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.8em;
+  letter-spacing: 1px;
+}
+
+main h1 {
+  padding-top: 10px;
+  color: white;
+}
+main h2 {
+  color: white;
+  border-left: 4px solid rgb(235, 235, 8);
+  padding-left: 10px;
+  margin-top: 30px;
+  font-size: 1.8em;
+}
+
+h3 {
+  color: white;
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+  color: white;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+  text-align: center;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #2c3e50;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(44, 62, 80, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+}
+
+.foot {
+  background-color: black;
+  color: white;
+  text-align: center;
+
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+
+.foot img {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+}
+
+footer h2 {
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+footer a {
+  color: white;
+}
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-bottom: 5px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

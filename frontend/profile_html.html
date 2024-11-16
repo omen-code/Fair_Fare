@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - FairFare</title>
+    <link rel="stylesheet" href="profile_css.css" />
+  </head>
+  <body>
+    <div class="half-ellipse-header">
+      <div class="logo">
+        <a href="home.html">FairFare</a>
+      </div>
+      <div class="nav-links">
+        <a href="home.html">Home </a>
+
+        <a href="login_html.html">Logout</a>
+      </div>
+    </div>
+    <main>
+      <h2><u>My Profile</u></h2>
+      <div class="profile-info">
+        <img id="profile-pic" src="user_icon.png" alt="Profile Picture" />
+        <div class="profile-details">
+          <div class="profile-item">
+            <label for="name">Name:</label>
+            <span id="name">John Doe</span>
+          </div>
+          <div class="profile-item">
+            <label for="email">Email:</label>
+            <span id="email">johndoe@example.com</span>
+          </div>
+          <div class="profile-item">
+            <label for="mobile">Mobile:</label>
+            <span id="mobile">1234567890</span>
+          </div>
+          <div class="profile-item">
+            <label for="gender">Gender:</label>
+            <span id="gender">Male</span>
+          </div>
+          <div class="profile-item">
+            <label for="emergency">Emergency Contact:</label>
+            <span id="emergency">1234567890</span>
+          </div>
+          <br />
+
+          <div class="button-container">
+            <button id="edit-pic-btn" class="btn">Edit Profile Picture</button>
+            <button id="edit-btn" class="btn">Edit</button>
+          </div>
+        </div>
+      </div>
+      <div class="message" id="message"></div>
+    </main>
+
+    <!-- Modal for changing profile picture -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close">&times;</span>
+        <h3>Confirm Profile Picture</h3>
+        <img id="preview" src="" alt="Profile Preview" />
+        <div class="modal-buttons">
+          <button id="confirm-btn" class="btn">Confirm</button>
+          <button id="cancel-btn" class="btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br />
+    <!-- Footer -->
+    <footer>
+      <div class="foot">
+        <hr color="yellow" />
+        <h2>FairFare</h2>
+
+        Contact Us Online:
+        <br />
+        <a href="https://www.instagram.com/fair_fare.official"
+          ><img src="insta_logo.jpg"
+        /></a>
+        <img src="facebook_logo.png" />
+        <img src="x_logo.png" />
+      </div>
+      <a href="t&c.html" alt="t&c">Terms & Conditions</a>
+      <p>&copy; 2024 FairFare. All Rights Reserved.</p>
+      <br />
+    </footer>
+
+    <script src="profile_js.js"></script>
+  </body>
+</html>

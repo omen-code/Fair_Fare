@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FairFare Wallet</title>
+    <link rel="stylesheet" href="wallet.css" />
+  </head>
+  <body>
+    <header>
+      <a href="home.html"><h2>FairFare</h2></a>
+    </header>
+    <main>
+      <div class="wallet-container">
+        <h1><u>FairFare Wallet</u></h1>
+
+        <div class="wallet-balance">
+          <p>Current Balance: ₹<span id="balance">0.00</span></p>
+        </div>
+
+        <div class="wallet-add-money">
+          <input type="number" id="amount" placeholder="Enter amount to add" />
+          <button onclick="openPaymentModal()">Add Money</button>
+        </div>
+        
+        <div class="wallet-transaction-history">
+            <div class="transaction-history">
+          <h2><u>Transaction History</u></h2>
+          <ul id="transaction-history"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for payment method selection -->
+      <div id="paymentModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&#8592;</span>
+          <h2>Scan QR</h2>
+          <img width="300" height="300" src="QR.jpg">
+          <button class="payment-btn" onclick="completePayment()">Complete Payment</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+        <div class="foot">
+          <hr color="yellow" />
+          <h2>FairFare</h2>
+          <br>
+          <p>Contact Us Online:</p>
+          <br />
+          <a href="https://www.instagram.com/fair_fare.official"
+            ><img src="insta_logo.jpg"
+          /></a>
+          <img src="facebook_logo.png" />
+          <img src="x_logo.png" />
+        </div>
+        <a href="t&c.html" alt="t&c">Terms & Conditions</a>
+        <p>&copy; 2024 FairFare. All Rights Reserved.</p>
+        <br />
+
+    <script src="wallet.js"></script>
+  </body>
+</html>
