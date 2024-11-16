@@ -1,4 +1,3 @@
-// Replace 'YOUR_API_KEY' with your actual OpenCage API key
 const apiKey = 'e2166e5815c945c4a8d964b3e4d0c1b0';
 
 // Sidebar menu functions
@@ -46,7 +45,9 @@ async function getRide() {
                 const dst_lat = destinationCoordinates.latitude;
                 const dst_long = destinationCoordinates.longitude;
 
-                alert(`Ride from ${pickup} to ${destination} is being processed.\nPickup Coordinates: ${pick_lat}, ${pick_long}\nDestination Coordinates: ${dst_lat}, ${dst_long}`);
+                // Redirect to confirmation.html with parameters
+                const url = `confirmation.html?pickup=${encodeURIComponent(pickup)}&pick_lat=${pick_lat}&pick_long=${pick_long}&destination=${encodeURIComponent(destination)}&dst_lat=${dst_lat}&dst_long=${dst_long}`;
+                window.location.href = url;
             } else {
                 alert("Could not retrieve coordinates for the given addresses.");
             }

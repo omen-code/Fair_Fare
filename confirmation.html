@@ -4,166 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Your Ride</title>
-    <style>
-        /* General Styling */
-        body {
-            background-color: black;
-            color: gold;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin: 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid gold;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        /* Transport Options Section */
-        .transport-options {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        /* Ride Option Styling */
-        .ride-option {
-            background-color: #222;
-            border: 1px solid gold;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.5);
-            text-align: center;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s ease;
-        }
-
-        .ride-option:hover {
-            transform: scale(1.05);
-        }
-
-        .ride-option h3 {
-            margin-top: 15px;
-            font-size: 1.5rem;
-            color: gold;
-        }
-
-        /* Comparison Section */
-        .comparison-section {
-            flex: 2;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        /* Comparison Card Styling */
-        .comparison-card {
-            background-color: #222;
-            border: 1px solid gold;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.5);
-            text-align: center;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.3s ease;
-        }
-
-        .comparison-card:hover {
-            transform: scale(1.05);
-        }
-
-        /* Logo Styling */
-        .service-logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        /* Image Styling for Transport Options */
-        .ride-image {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-    </style>
-    <script>
-        function generateDetails() {
-            const modes = [
-                { 
-                    name: "Auto", 
-                    image: "C:\\Users\\malli\\Desktop\\Fair_Fare\\auto.jpeg" 
-                },
-                { 
-                    name: "Bike", 
-                    image: "https://via.placeholder.com/300x200?text=Bike" 
-                },
-                { 
-                    name: "Cab Mini", 
-                    image: "https://via.placeholder.com/300x200?text=Cab+Mini" 
-                },
-                { 
-                    name: "Cab XL", 
-                    image: "https://via.placeholder.com/300x200?text=Cab+XL" 
-                }
-            ];
-
-            const services = ["Uber", "Ola", "Rapido"];
-            const logos = {
-                "Uber": "C:\\Users\\malli\\Desktop\\Fair_Fare\\uber.png",
-                "Ola": "C:\\Users\\malli\\Desktop\\Fair_Fare\\ola.png",
-                "Rapido": "C:\\Users\\malli\\Desktop\\Fair_Fare\\rapido.png"
-            };
-
-            const comparisonSection = document.querySelector(".comparison-section");
-
-            // Populate transport options
-            modes.forEach((mode, index) => {
-                document.getElementById(`mode${index}`).innerHTML = `
-                    <img src="${mode.image}" alt="${mode.name}" class="ride-image">
-                    <h3>${mode.name}</h3>
-                `;
-
-                // Populate comparison section for this mode
-                services.forEach((service) => {
-                    const comparisonPrice = Math.floor(Math.random() * 200) + 50;
-                    const comparisonETA = Math.floor(Math.random() * 15) + 1;
-
-                    const card = document.createElement("div");
-                    card.classList.add("comparison-card");
-                    card.innerHTML = `
-                        <img src="${logos[service]}" alt="${service} Logo" class="service-logo">
-                        <p>Price: ₹${comparisonPrice}</p>
-                        <p>ETA: ${comparisonETA} min</p>
-                    `;
-                    comparisonSection.appendChild(card);
-                });
-            });
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body onload="generateDetails()">
+    <div class="half-ellipse-header">
+        <div class="logo">
+            <a href="home.html">FairFare</a>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="login_html.html">Logout</a>
+        </div>
+    </div>
     <h1>Choose Your Preferred Ride</h1>
     <div class="container">
         <!-- Transport Options Section -->
@@ -177,5 +29,6 @@
         <!-- Comparison Section -->
         <div class="comparison-section"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
