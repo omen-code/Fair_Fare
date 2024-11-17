@@ -3,16 +3,8 @@ import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet-routing-machine';
 
-interface MapProps {
-  center: [number, number];
-  markers?: [number, number][];
-  showDriverMarker?: boolean;
-  sourceCoords?: [number, number];
-  destCoords?: [number, number];
-}
-
 // Custom marker icons
-const createCustomIcon = (color: string) => {
+const createCustomIcon = (color) => {
   return L.divIcon({
     className: 'custom-icon',
     html: `<div style="background-color: ${color}; width: 16px; height: 16px; border-radius: 50%; border: 2px solid white;"></div>`,
@@ -25,7 +17,7 @@ const destIcon = createCustomIcon('#ef4444');
 const driverIcon = createCustomIcon('#FFD700');
 
 // Routing control component
-const RoutingControl: React.FC<{ source: [number, number]; dest: [number, number] }> = ({ source, dest }) => {
+const RoutingControl = ({ source, dest }) => {
   const map = useMap();
 
   useEffect(() => {
@@ -51,7 +43,7 @@ const RoutingControl: React.FC<{ source: [number, number]; dest: [number, number
   return null;
 };
 
-const Map: React.FC<MapProps> = ({ center, markers = [], showDriverMarker, sourceCoords, destCoords }) => {
+const Map = ({ center, markers = [], showDriverMarker, sourceCoords, destCoords }) => {
   return (
     <MapContainer
       center={center}
@@ -63,7 +55,7 @@ const Map: React.FC<MapProps> = ({ center, markers = [], showDriverMarker, sourc
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
       />
-      
+
       {markers.map((position, index) => (
         <Marker
           key={index}
